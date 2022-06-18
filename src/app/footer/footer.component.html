@@ -1,0 +1,61 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="pg-footer col-12 col-lg-4 col-sm-6">
+                <a routerLink="">
+                    <div>
+                        <img class="main_img" src="../../assets/Img/Solido-1.png">
+                    </div>
+                    <div>
+                        <div class="txt-footer txt-center txt-solido" id="solido">Solido</div>
+                        <div class="txt-center txt-solido" id="bd">Blechner <span>&</span> Dachdecker</div>
+                    </div>
+                </a>
+            </div>
+            <div class="pg-footer col-12 col-lg-4 col-sm-6" id="category-media">
+                <div class="spec_txt-footer txt-center">Kategorie</div>
+                <div>
+                    <div class="txt-footer txt-center category-btn">
+                        <a href="">Hauptseite</a>
+                    </div>
+                    <div class="txt-footer txt-center category-btn">
+                        <a href="catalog">Katalog</a>
+                    </div>
+                    <div class="txt-footer txt-center category-btn">
+                        <a href="contacts">Kontakt</a>
+                    </div>
+                    <div *ngIf="account.isAuthentication()" class="txt-footer txt-center category-btn">
+                        <a href="admin">Admin Panel</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pg-footer col-12 col-lg-4 col-sm-6" id="contacts">
+                <div class="spec_txt-footer txt-right">Kontakt</div>
+                <div>
+                    <div class="txt-footer txt-right">
+                        <a *ngIf="contact" class="txt-link" href="tel:{{contact.phone}}">{{contact.phone}}</a>
+                    </div>
+                    <div class="txt-footer txt-right">
+                        <a *ngIf="contact" class="txt-link" href="mailto:{{contact.email}}">{{contact.email}}</a>
+                    </div>
+                    <div *ngIf="contact" class="txt-footer txt-right">
+                        <div>{{contact.addressOne}}</div>
+                        <div>{{contact.addressTwo}}</div>
+                    </div>
+                    <div class="txt-footer txt-right">
+                        <a href="https://www.google.com/maps/place/Durlacher+Allee+112,+76137+Karlsruhe,+Deutschland/@49.0037175,8.4422815,17.5z/data=!4m5!3m4!1s0x4797089b7080d9f5:0xe5bb59592085def0!8m2!3d49.0036883!4d8.4415857" class="d-flex location">
+                            <div class="ml-auto d-flex">
+                                <mat-icon class="location-icon" aria-hidden="false" aria-label="Example room icon">room</mat-icon>
+                                <div class="location-txt">Schau auf die Karte</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="end-footer">
+        <div class="txt-footer txt-center" id="security">Alle Rechte vorbehalten</div>
+        <div class="txt-footer txt-center" id="license">© 2022 https://solido-online.click/</div>
+    </div>
+</footer>

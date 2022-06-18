@@ -1,0 +1,89 @@
+.main {
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}
+.catalog {
+    margin: 10px 20px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 4px;
+    padding-bottom: 10px;
+    width: 780px;
+}
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+button {
+    margin: 0 10px;
+}
+button:first-child {
+    margin-right: 0;
+}
+button:last-child {
+    margin-left: 0;
+}
+
+.image {
+    width: 100px;
+}
+.image img {
+    width: 100px;
+}
+.name {
+    width: 130px;
+}
+.description {
+    width: 220px;
+}
+.price {
+    width: 100px;
+    max-width: 100px;
+}
+.button-menu {
+    width: 215px;
+    margin-right: 10px;
+}
+
+.loading {
+    display: flex;
+}
+.loading img {
+    width: 100px;
+    margin: auto;
+}
+
+.alert {
+    position: absolute;
+    top: 200px;
+    right: 350px;
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}
+
+.catalogs-pc {
+    display: block;
+}
+
+.catalogs-mb {
+    display: none;
+}
+.catalog-mb {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 4px;
+}
+.image-mb img {
+    width: 100%;
+    border-radius: 4px;
+}
+.button-menu-mb {
+    width: 100%;
+}
+
+@media(max-width: 855px) {
+    .catalogs-pc {
+        display: none;
+    }
+    .catalogs-mb {
+        display: block;
+    }
+}

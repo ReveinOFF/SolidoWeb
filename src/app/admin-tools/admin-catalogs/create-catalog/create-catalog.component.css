@@ -1,0 +1,21 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}
+.example-full-width {
+    width: 100%;
+}
+.btn-save {
+    display: flex;
+    justify-content: space-around;
+}
+.label {
+    color: grey;
+}
+
+.alert {
+    margin-top: 10px;
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}

@@ -1,0 +1,27 @@
+<div>
+    <form (submit)="submit()" [formGroup]="form" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" type="text" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Beschreibung</mat-label>
+            <input formControlName="description" type="text" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Preis</mat-label>
+            <input formControlName="price" type="number" matInput>
+        </mat-form-field>
+        <div class="mb-3">
+            <label for="file" class="label">Bild</label>
+            <input type="file" class="form-control" name="file" id="file" #file (change)="selectFile($event)" accept="image/jpeg, image/jpg">
+        </div>
+        <div class="btn-save">
+            <button color="warn" type="submit" class="btn btn-danger" routerLink="..">Zurück</button>
+            <button color="warn" type="submit" class="btn btn-success">Erstellen</button>
+        </div>
+    </form>
+</div>
+
+<ngb-alert class="alert" #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+</ngb-alert>

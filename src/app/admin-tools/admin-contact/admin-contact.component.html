@@ -1,0 +1,42 @@
+<div>
+    <form (submit)="submit()" [formGroup]="form" class="example-form">
+        <mat-form-field class="example-full-width form-id" appearance="fill">
+            <mat-label>Id</mat-label>
+            <input class="form-input" formControlName="id" type="number" matInput placeholder="1">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ihr Name</mat-label>
+            <input formControlName="name" type="text" matInput placeholder="Julian Beling">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Dein Telefon</mat-label>
+            <input formControlName="phone" type="text" matInput placeholder="063/412 526 48">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ihre E-Mail</mat-label>
+            <input formControlName="email" type="email" matInput placeholder="index@gmx.de">
+        </mat-form-field>
+        <div class="time">
+            <mat-form-field appearance="fill">
+                <mat-label>Zeit von</mat-label>
+                <input formControlName="dateOne" type="text" matInput placeholder="08:00">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>bis</mat-label>
+                <input formControlName="dateTwo" type="text" matInput placeholder="18:00">
+            </mat-form-field>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Adresse #1</mat-label>
+            <input formControlName="addressOne" type="text" matInput placeholder="Keltenstr. 14">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Adresse #2</mat-label>
+            <input formControlName="addressTwo" type="text" matInput placeholder="76744 Wörth am Rhein">
+        </mat-form-field>
+        <button color="warn" type="submit" class="btn btn-success btn-save">Speichern</button>
+    </form>
+</div>
+
+<ngb-alert class="alert" #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+</ngb-alert>

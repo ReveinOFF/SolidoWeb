@@ -1,0 +1,120 @@
+main {
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}
+.contact {
+    margin: 10px;
+}
+.contact-h2 {
+    padding: 10px;
+    border-bottom: 2px solid rgb(92, 92, 92);
+    border-right: 2px solid rgb(92, 92, 92);
+    border-bottom-right-radius: 10px;
+    margin: 10px 0;
+    display: inline-block;
+}
+h2:first-child {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(92, 92, 92);
+    margin-bottom: 0;
+}
+#contact-media {
+    display: flex;
+    justify-content: space-between;
+}
+.contact-menu {
+    display: inline-block;
+}
+.icon, #last-icon {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-right: 1px solid red;
+    padding-right: 5px;
+}
+#last-icon {
+    margin-top: 12px;
+    padding-top: 1px;
+}
+.icon mat-icon, #last-icon mat-icon {
+    color: red;
+}
+.txt-header {
+    font-weight: bold;
+    border-bottom: 1px solid red;
+    padding-left: 5px;
+}
+.txt-body {
+    padding-top: 1px;
+    padding-left: 5px;
+}
+.txt-body, .txt-body a {
+    color: #929292;
+    transition: 0.4s;
+}
+.txt-body a:hover {
+    color: #464646;
+    transition: 0.4s;
+}
+.cards {
+    margin: 5px 0;
+}
+
+#call-media {
+    display: flex;
+    justify-content: flex-end;
+}
+.call-h2 {
+    padding: 10px;
+    border-bottom: 2px solid rgb(92, 92, 92);
+    border-left: 2px solid rgb(92, 92, 92);
+    border-bottom-left-radius: 10px;
+    margin: 20px 0;
+    display: inline-block;
+    margin-top: 0;
+}
+h2:last-child {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(92, 92, 92);
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.example-full-width {
+    width: 100%;
+}
+.call-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe {
+    border-radius: 4px;
+}
+
+@media(max-width: 849px) {
+    #contact-media {
+        display: inline-block;
+    }
+    .contact-menu {
+        display: block;
+    }
+    .call-h2 {
+        border-bottom: 2px solid rgb(92, 92, 92);
+        border-left: 0;
+        border-bottom-left-radius: 0;
+        border-right: 2px solid rgb(92, 92, 92);
+        border-bottom-right-radius: 10px;
+    }
+    #call-media {
+        display: flex;
+        justify-content: flex-start;
+    }
+}

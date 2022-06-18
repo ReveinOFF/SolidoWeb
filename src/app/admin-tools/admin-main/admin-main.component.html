@@ -1,0 +1,39 @@
+<div class="form">
+    <form class="example-form" [formGroup]="form" (submit)="submit()">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Id</mat-label>
+            <input class="form-input" formControlName="id" type="number" matInput placeholder="1">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Über das Unternehmen</mat-label>
+            <textarea formControlName="company" matInput placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde obcaecati a mollitia earum quasi, suscipit quod magni quidem nostrum aperiam sapiente deleniti deserunt iure soluta reprehenderit autem! Amet, ipsam nam."></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Wie man bestellt #1</mat-label>
+            <textarea formControlName="orderOne" matInput placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui inventore id dolor at error laboriosam quis? Ea vel, id repellat fugit at, quidem nostrum consequuntur, qui illo dolor quia neque?"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Wie man bestellt #2</mat-label>
+            <textarea formControlName="orderTwo" matInput placeholder="Numquam eius repudiandae ea quibusdam vitae reprehenderit sint quisquam totam error aut nisi, eum veniam temporibus cumque suscipit, sunt qui sapiente saepe! Numquam doloribus harum, tempora possimus repudiandae animi dicta!"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Wie man bestellt #3</mat-label>
+            <textarea formControlName="orderThree" matInput placeholder="A in cumque harum atque quisquam ipsa. Mollitia ad quia asperiores cumque sint et vel amet eligendi repellat a quas, debitis adipisci iusto veniam, beatae dignissimos placeat perspiciatis, fuga expedita!"></textarea>
+        </mat-form-field>
+        <div class="mb-3">
+            <input #file (change)="selectFile($event)" type="file" class="form-control" name="file" id="file" multiple accept="image/jpeg, image/jpg">
+        </div>
+        <button color="warn" type="submit" class="btn btn-success btn-save">Speichern</button>
+    </form>
+    <form class="form-image">
+        <div class="div-image" *ngIf="main">
+            <div class="images" *ngFor="let image of main.images">
+                <img src="https://api.solido-online.click/Image/{{image}}" alt="">
+                <button mat-flat-button color="warn" (click)="Delete(image)">Delete</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<ngb-alert class="alert" #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+</ngb-alert>

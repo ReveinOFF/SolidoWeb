@@ -1,0 +1,158 @@
+a {
+    text-decoration: none;
+}
+footer {
+    background-color: rgb(231, 231, 231);;
+    padding-top: 50px;
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    
+}
+.main_img {
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mg-footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+.pg-footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.spec_txt-footer {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(92, 92, 92);
+}
+.txt-footer {
+    font-size: 15px;
+    margin: 15px auto;
+}
+#security {
+    font-weight: bold;
+    color: rgb(92, 92, 92);
+    padding-top: 10px;
+}
+.txt-left {
+    text-align: start;
+}
+.txt-right {
+    text-align: end;
+}
+.txt-center {
+    text-align: center;
+}
+.category-btn a {
+    color: black;
+    text-decoration: none;
+    transition: 0.4s;
+    font-weight: bold;
+}
+.category-btn a:hover {
+    color: rgb(92, 92, 92);
+    transition: 0.4s;
+}
+.location {
+    color: red;
+    text-decoration: none;
+    transition: 0.4s;
+}
+.location:hover {
+    color: rgb(248, 100, 100);
+    transition: 0.4s;
+}
+.location-txt {
+    font-weight: bold;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.location-icon {
+    font-weight: bold;
+}
+.ml-auto {
+    margin-left: auto;
+}
+.txt-solido {
+    font-family: Venus;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #363C47;
+}
+#solido {
+    font-size: 55px;
+    margin-bottom: 0;
+}
+#bd {
+    font-size: 10px;
+    color: #A02F38;
+}
+#bd>span {
+    color: #363C47;
+}
+#end-footer {
+    margin-top: 30px;
+    background-color: #F7F7F7;
+}
+#license {
+    padding-bottom: 10px;
+}
+
+.txt-link {
+    color: black;
+    text-decoration:underline;
+    transition: 0.4s;
+}
+.txt-link:hover {
+    color: rgb(92, 92, 92);
+    transition: 0.4s;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
+}
+@media(max-width: 991px) {
+    .txt-left {
+        text-align: center;
+    }
+    .txt-right {
+        text-align: center;
+    }
+    .ml-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #contacts {
+        padding-top: 30px;
+    }
+}
+@media (max-width: 700px) {
+    .container {
+        max-width: 497px;
+    }
+}
+@media(max-width: 575px) {
+    #contacts {
+        display: none;
+    }
+    #end-footer {
+        margin-top: 0;
+    }
+    #category-media {
+        margin-top: 20px;
+    }
+}

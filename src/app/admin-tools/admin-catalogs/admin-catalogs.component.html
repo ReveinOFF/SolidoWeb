@@ -1,0 +1,48 @@
+<div class="main">
+    <div>
+        <a color="warn" type="submit" class="btn btn-success btn-save" routerLink="create">Erstellen Sie ein neues Verzeichnis</a>
+    </div>
+    <div *ngIf="catalogs?.length === 0">Catalog Empty!</div>
+    <div class="catalogs-pc">
+        <div class="catalog" *ngFor="let roof of catalogs">
+            <tr>
+                <th class="image"></th>
+                <th class="name">Name</th>
+                <th class="description">Beschreibung</th>
+                <th class="price">Preis</th>
+            </tr>
+            <tr>
+                <td class="image">
+                    <img src="http://api.solido-online.click/Image/{{roof.image}}" alt="">
+                </td>
+                <td class="name">{{roof.name}}</td>
+                <td class="description">{{roof.description}}</td>
+                <td class="price">{{roof.price}}$/m&#178;</td>
+                <div class="btn-group button-menu">
+                    <button class="btn btn-danger" (click)="Delete(roof.id)">Löschen</button>
+                </div>
+            </tr>
+        </div>
+    </div>
+    
+    <div class="catalogs-mb">
+        <div class="catalog-mb" *ngFor="let roof of catalogs">
+            <div class="image-mb">
+                <img src="https://api.solido-online.click/Image/{{roof.image}}" alt="">
+            </div>
+            <div class="name-mb">Name: {{roof.name}}</div>
+            <div class="description-mb">Beschreibung: {{roof.description}}</div>
+            <div class="price-mb">Preis: {{roof.price}}$/m&#178;</div>
+            <div class="btn-group button-menu-mb">
+                <button class="btn btn-danger" (click)="Delete(roof.id)">Löschen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!catalogs" class="loading">
+    <img  src="../../../assets/Gif/kOnzy.gif" alt="Loading">
+</div>
+
+<ngb-alert class="alert" #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+</ngb-alert>

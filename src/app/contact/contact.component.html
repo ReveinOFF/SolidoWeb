@@ -1,0 +1,110 @@
+<main>
+    <div class="contact">
+        <div>
+            <div class="pb-4" id="contact-media">
+                <div class="contact-menu">
+                    <div class="contact-h2">
+                        <h2>Kontakt</h2>
+                    </div>
+                    <div class="d-flex cards">
+                        <div class="icon">
+                            <mat-icon aria-hidden="false" aria-label="Example person icon">person</mat-icon>
+                        </div>
+                        <div>
+                            <div class="txt-header">Wird mit Ihnen sprechen:</div>
+                            <div class="txt-body" *ngIf="contact">{{contact.name}}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex cards">
+                        <div class="icon">
+                            <mat-icon aria-hidden="false" aria-label="Example call icon">call</mat-icon>
+                        </div>
+                        <div>
+                            <div class="txt-header">Rufen Sie uns an:</div>
+                            <div class="txt-body">
+                                <a href="tel:{{contact.phone}}" *ngIf="contact">{{contact.phone}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex cards">
+                        <div class="icon">
+                            <mat-icon aria-hidden="false" aria-label="Example email icon">email</mat-icon>
+                        </div>
+                        <div>
+                            <div class="txt-header">Schreib uns:</div>
+                            <div class="txt-body">
+                                <a href="mailto:{{contact.email}}" *ngIf="contact">{{contact.email}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex cards">
+                        <div class="icon">
+                            <mat-icon aria-hidden="false" aria-label="Example schedule icon">schedule</mat-icon>
+                        </div>
+                        <div>
+                            <div class="txt-header">Wir arbeiten:</div>
+                            <div class="txt-body" *ngIf="contact">Von {{contact.dateOne}} bis {{contact.dateTwo}}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex cards">
+                        <div id="last-icon">
+                            <mat-icon aria-hidden="false" aria-label="Example explore icon">explore</mat-icon>
+                        </div>
+                        <div>
+                            <div class="txt-header">Unsere Adresse:</div>
+                            <div class="txt-body" *ngIf="contact">
+                                <div>{{contact.addressOne}}</div>
+                                <div>{{contact.addressTwo}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-block">
+                    <div id="call-media">
+                        <div class="call-h2">
+                            <h2>Rufen Sie an</h2>
+                        </div>
+                    </div>
+                    <form class="example-form" (submit)="submit(content)" [formGroup]="form">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Ihr Name</mat-label>
+                            <input formControlName="Name" type="text" matInput>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Ihr Telefon</mat-label>
+                            <input formControlName="userPhone" type="text" matInput>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Grund des anrufes</mat-label>
+                            <input formControlName="Subject" type="text" matInput>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Kommentar...</mat-label>
+                            <textarea formControlName="Body" matInput></textarea>
+                        </mat-form-field>
+                        <button type="submit" class="call-btn" mat-mini-fab color="warn">
+                            <mat-icon>phone_in_talk</mat-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBt50cQ2UD6Vwh9Rxo5SrEKHl6qHpvV8CQ&q=Durlacher+Allee+112,+76137+Karlsruhe,+Deutschland" frameborder="0" allowfullscreen width="100%" height="500px"></iframe>
+            </div>
+        </div>
+    </div>
+</main>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Versand erfolgreich</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div>Sie haben erfolgreich telefoniert!</div>
+        <div>Erwarten Sie einen Anruf!</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" mat-stroked-button color="warn" (click)="modal.close('Close click')">Gut</button>
+    </div>
+</ng-template>

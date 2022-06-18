@@ -1,0 +1,25 @@
+main {
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}
+h1, h6 {
+    text-align: center;
+    margin-top: 8px;
+}
+h1 {
+    text-transform: uppercase;
+    color: red;
+    font-weight: bold;
+}
+h6 {
+    color: rgb(92, 92, 92);
+}
+img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 680px) {
+    img {
+        width: 100%;
+    }
+}

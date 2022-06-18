@@ -1,0 +1,20 @@
+<main>
+    <div class="catalog-h2">
+        <h2>Leistungskatalog</h2>
+    </div>
+    <div *ngIf="catalogs?.length === 0">Catalog Empty!</div>
+    <div class="catalog-menu">
+        <mat-card class="example-card" *ngFor="let catalog of catalogs">
+            <mat-card-title-group>
+              <mat-card-title>{{catalog.name}}</mat-card-title>
+              <mat-card-subtitle>{{catalog.price}}$/m&#178;</mat-card-subtitle>
+              <img src="https://api.solido-online.click/Image/{{catalog.image}}" >
+            </mat-card-title-group>
+            <mat-card-content>
+              <div>
+                  {{catalog.description}}
+              </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</main>

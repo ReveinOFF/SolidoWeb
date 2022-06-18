@@ -1,0 +1,49 @@
+<main *ngIf="account.isAuthentication();">
+    <aside>
+        <div>
+            <h4>SPEISEKARTE</h4>
+        </div>
+        <div>
+            <div class="menu-btn">
+                <a routerLink="main" mat-button>Hauptseite</a>
+            </div>
+            <div class="menu-btn">
+                <a routerLink="catalog" mat-button>Katalog</a>
+            </div>
+            <div class="menu-btn">
+                <a routerLink="contact" mat-button>Kontakt</a>
+            </div>
+            <div class="menu-btn">
+                <a routerLink="profile" mat-button>Profil</a>
+            </div>
+            <div class="menu-btn" (click)="logout()">
+                <a mat-button class="logoutBtn">Ausloggen</a>
+            </div>
+        </div>
+    </aside>
+    <div class="pages">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+<main class="login" *ngIf="!account.isAuthentication();">
+    <div class="d-inline-block ms-auto me-auto login-form">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Administrator-Login</h4>
+        </div>
+        <form (submit)="submit()" [formGroup]="form">
+            <div class="modal-body">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Anmeldung</mat-label>
+                    <input formControlName="login" type="text" matInput>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Passwort</mat-label>
+                    <input formControlName="password" type="password" matInput>
+                </mat-form-field>
+            </div>
+            <div class="modal-footer">
+                <button mat-raised-button type="submit" class="btn btn-outline-danger">Betreten</button>
+            </div>
+        </form>
+    </div>
+</main>

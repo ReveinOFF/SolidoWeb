@@ -1,0 +1,103 @@
+main {
+    font-family: "OpenSans", Arial, Helvetica, Verdana, sans-serif;
+}
+
+.loading {
+    margin-top: 15%;
+    margin-bottom: 20%;
+}
+.loading img {
+    width: 100px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    background-color: rgb(216, 216, 216);
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 4px;
+    color: rgb(116, 116, 116);
+    padding: 5px 0;
+}
+
+.picsum-img-wrapper img {
+    width: 100%;
+}
+.carousel {
+    padding-top: 10px;
+    border-top: 2px solid gray;
+}
+.company {
+    padding: 10px;
+}
+
+.order {
+    padding: 10px;
+    display: flex;
+}
+.order img {
+    width: 300px;
+}
+.order>div {
+    margin-right: 15px;
+}
+.order-txt {
+    margin-left: 15px;
+    border: 2px solid rgb(255, 191, 191);
+    border-radius: 4px;
+    width: 100%;
+}
+.order ul {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.order ul li {
+    margin-bottom: 10px;
+    padding: 10px 0;
+} 
+ul {
+    list-style: none;
+    list-style-position: outside;
+}
+ul li::before {
+    content: '';
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    background-size: 22px;
+    background-image: url("../../assets/Img/checkmark.png");
+    background-repeat: no-repeat;
+    margin-left: -30px;
+    padding-right: 30px;
+}
+
+.address {
+    padding: 0 10px;
+    color: rgb(255, 112, 112);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+iframe {
+    border-radius: 4px;
+}
+
+@media(max-width: 969px) {
+    .order {
+        display: block;
+    }
+    #order-img {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .order img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    .order-txt {
+        margin: 0;
+    }
+}

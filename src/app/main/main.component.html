@@ -1,0 +1,51 @@
+<main>
+    <div>
+        <div>
+            <h2>Über das Unternehmen</h2>
+        </div>
+        <div class="company" *ngIf="main">
+            <div>{{main.company}}</div>
+        </div>
+    </div>
+    <ngb-carousel class="carousel" *ngIf="images" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+        <ng-template ngbSlide *ngFor="let image of images">
+          <div class="picsum-img-wrapper">
+            <img [src]="image">
+          </div>
+          <div class="carousel-caption">
+            <h3>ABGESCHLOSSENE OBJEKTE</h3>
+          </div>
+        </ng-template>
+    </ngb-carousel>
+    <div>
+        <div>
+            <h2>Wie man bestellt</h2>
+        </div>
+        <div class="order">
+            <div id="order-img">
+                <img src="../../assets/Img/pngwing1.com.png">
+            </div>
+            <div class="d-flex ps-2 order-txt">
+                <ul *ngIf="main">
+                    <li>{{main.orderOne}}</li>
+                    <li>{{main.orderTwo}}</li>
+                    <li>{{main.orderThree}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>Wir befinden uns in</h2>
+        </div>
+        <div>
+            <div *ngIf="contact" class="address">
+                <div>{{contact.addressOne}}</div>
+                <div>{{contact.addressTwo}}</div>
+            </div>
+            <div>
+                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBt50cQ2UD6Vwh9Rxo5SrEKHl6qHpvV8CQ&q=Durlacher+Allee+112,+76137+Karlsruhe,+Deutschland" frameborder="0" allowfullscreen width="100%" height="500px"></iframe>
+            </div>
+        </div>
+    </div>
+</main>

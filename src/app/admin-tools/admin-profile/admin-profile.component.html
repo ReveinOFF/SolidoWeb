@@ -1,0 +1,28 @@
+<div>
+    <form (submit)="submit()" [formGroup]="form" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>solido1a@gmx.de</mat-label>
+            <input disabled type="email" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Anmeldung</mat-label>
+            <input formControlName="login" type="text" matInput placeholder="admin">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Aktuelles Passwort</mat-label>
+            <input formControlName="curretPass" type="password" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Neues Passwort</mat-label>
+            <input formControlName="newPass" type="password" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Wiederholen Sie das Passwort</mat-label>
+            <input formControlName="repeatNewPass" type="password" matInput>
+        </mat-form-field>
+        <button color="warn" type="submit" class="btn btn-success btn-save">Speichern</button>
+    </form>
+</div>
+
+<ngb-alert class="alert" #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+</ngb-alert>

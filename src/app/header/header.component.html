@@ -1,0 +1,175 @@
+<header class="header-1">
+    <div class="header-top containers">
+        <div class="header-top_title">
+            <a class="header_title" routerLink="">
+                <img class="header_img" src="../../assets/Img/2Solido-2.png">
+                <div class="header_text">olido</div>
+            </a>
+        </div>
+        <div class="header-top_info">
+            <div class="header-top_contacts">
+                <div class="info">
+                    <a *ngIf="contact" class="txt-link" href="tel:{{contact.phone}}">{{contact.phone}}</a>
+                </div>
+                <div class="info">
+                    <a *ngIf="contact" class="txt-link" href="mailto:{{contact.email}}">{{contact.email}}</a>
+                </div>
+            </div>
+            <div class="header-top_call">
+                <button class="btn_call" mat-stroked-button color="warn" (click)="open(content2)">Fordern Sie einen Anruf an</button>
+            </div>
+        </div>
+    </div>
+</header>
+<header id="sticky-header">
+    <div class="header-bottom">
+        <div class="header-bottom_menu containers">
+            <div class="h-txt">
+                <a [class.selected]="selectedItem == 'home'" (click)="setStyleHome()" class="header-bottom_text d-flex" routerLink="">
+                    <mat-icon class="d-flex me-1 mt-auto mb-auto" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                    <div class="d-inline-block">Hauptseite</div>
+                </a>
+            </div>
+            <div class="h-txt">
+                <a [class.selected]="selectedItem == 'catalog'" (click)="setStyleCatalog()" class="header-bottom_text d-flex" routerLink="catalog">
+                    <mat-icon class="d-flex me-1 mt-auto mb-auto" aria-hidden="false" aria-label="Example filter_list icon">filter_list</mat-icon>
+                    <div class="d-inline-block">Katalog</div>
+                </a>
+            </div>
+            <div class="h-txt">
+                <a [class.selected]="selectedItem == 'contact'" (click)="setStyleContact()" class="header-bottom_text d-flex" routerLink="contacts">
+                    <mat-icon class="d-flex me-1 mt-auto mb-auto" aria-hidden="false" aria-label="Example call icon">call</mat-icon>
+                    <div class="d-inline-block">Kontakt</div>
+                </a>
+            </div>
+            <div *ngIf="account.isAuthentication()" class="h-txt">
+                <a [class.selected]="selectedItem == 'admin'" (click)="setStyleAdmin()" class="header-bottom_text d-flex" routerLink="/admin">
+                    <mat-icon class="d-flex me-1 mt-auto mb-auto" aria-hidden="false" aria-label="Example admin_panel_settings icon">admin_panel_settings</mat-icon>
+                    <div class="d-inline-block">Administrationsmenü</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<header class="header-2">
+    <div class="containers header-top_mini">
+        <button mat-icon-button class="mb-auto mt-auto btn_menu" (click)="openCustomPanelClass(content)">
+            <mat-icon aria-hidden="false" aria-label="Example menu icon">menu</mat-icon>
+        </button>
+        <button class="btn_call" mat-stroked-button color="warn" (click)="open(content2)">Fordern Sie einen Anruf an</button>
+    </div>
+</header>
+
+<ng-template #content let-offcanvas class="ngTemplate">
+    <div class="offcanvas-header">
+        <a class="header_title" routerLink="">
+            <img class="header_img_mini" src="../../assets/Img/2Solido-2.png">
+            <div class="header_text_mini">olido</div>
+        </a>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <a class="category_menu" mat-button href="" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Hauptseite</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            </a>
+            <a class="category_menu" mat-button href="catalog" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Katalog</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example filter_list icon">filter_list</mat-icon>
+            </a>
+            <a class="category_menu" mat-button href="contacts" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Kontakt</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example call icon">call</mat-icon>
+            </a>
+        </div>
+        <div class="admin-panel" *ngIf="account.isAuthentication()">
+            <h4 class="admin-header">Administrationsmenü</h4>
+            <a class="category_menu" mat-button href="admin/main" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Hauptseite</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example admin_panel_settings icon">admin_panel_settings</mat-icon>
+            </a>
+            <a class="category_menu" mat-button href="admin/catalog" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Katalog</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example admin_panel_settings icon">admin_panel_settings</mat-icon>
+            </a>
+            <a class="category_menu" mat-button href="admin/contact" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Kontakt</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example admin_panel_settings icon">admin_panel_settings</mat-icon>
+            </a>
+            <a class="category_menu" mat-button href="admin/profile" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Profil</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example admin_panel_settings icon">admin_panel_settings</mat-icon>
+            </a>
+            <a class="logout" mat-button (click)="logout()" (click)="offcanvas.dismiss('Cross click')">
+                <div class="d-inline-block">Ausloggen</div>
+                <mat-icon class="d-inline-block me-1" aria-hidden="false" aria-label="Example logout icon">logout</mat-icon>
+            </a>
+        </div>
+        <div class="text-center">
+            <div class="info">
+                <a *ngIf="contact" class="txt-link" href="tel:{{contact.phone}}">{{contact.phone}}</a>
+            </div>
+            <div class="info">
+                <a *ngIf="contact" class="txt-link" href="mailto:{{contact.email}}">{{contact.email}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-footer">
+        <div class="text-center">
+            <div *ngIf="contact">
+                <div>{{contact.addressOne}}</div>
+                <div>{{contact.addressTwo}}</div>
+            </div>
+            <div class="txt-menu txt-center">
+                <a href="https://www.google.com/maps/place/Durlacher+Allee+112,+76137+Karlsruhe,+Deutschland/@49.0037175,8.4422815,17.5z/data=!4m5!3m4!1s0x4797089b7080d9f5:0xe5bb59592085def0!8m2!3d49.0036883!4d8.4415857" class="d-flex location">
+                    <div class="mglr-auto d-flex">
+                        <mat-icon class="location-icon" aria-hidden="false" aria-label="Example room icon">room</mat-icon>
+                        <div class="location-txt">Schau auf die Karte</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #content2 let-modal>
+    <form [formGroup]="form" (submit)="submit()">
+        <div class="modal-header">
+            <h4 class="modal-title modal-header" id="modal-basic-title">Fordern Sie einen Anruf an</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body">
+              <div class="mb-3">
+                  <label for="dateOfBirth">Ihr Name</label>
+                  <div class="input-group">
+                    <input formControlName="Name" type="text" class="form-control" name="dp">
+                  </div>
+              </div>
+              <div class="mb-3">
+                  <label for="dateOfBirth">Ihr Telefon</label>
+                  <div class="input-group">
+                      <input formControlName="userPhone" type="text" class="form-control" name="dp">
+                  </div>
+              </div>
+                  <div class="mb-3">
+                      <label for="dateOfBirth">Gegenstand der Beschwerde</label>
+                      <div class="input-group">
+                          <input formControlName="Subject" type="text" class="form-control" name="dp">
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="dateOfBirth">Kommentar...</label>
+                      <div class="input-group">
+                      <textarea formControlName="Body" class="form-control" name="dp"></textarea>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-danger" (click)="modal.close('Save click')">Bestellen</button>
+          </div>
+    </form>
+</ng-template>
+
+<ngb-alert class="alert" #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+</ngb-alert>
